@@ -37,17 +37,17 @@ jobs:
     - uses: actions/checkout@v2
     - name: Say hello
       run: |
-        echo "Hello, World!"
+      echo "Hello, World!"
     - name: Set up Python ${{ matrix.python-version }}
-       uses: actions/setup-python@v1
-       with:
-         python-version: ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
     NAME: INSTALL DEPENDENCIES
     RUN: |
       PYTHON -M PIP INSTALL --UPGRADE PIP
       PIP INSTALL -R REQUIREMENTS.TXT
     - NAME: INSTALL PACKAGE AND TEST
-       RUN: |
+      RUN: |
          MAKE INSTALL TEST CLEAN
 
     strategy:
